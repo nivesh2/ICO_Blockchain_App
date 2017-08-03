@@ -1,0 +1,31 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "semi": ["error", "never"],
+    "eol-last": "off",
+    "no-underscore-dangle": "off",
+    "func-names": ["error", "never"],
+    "no-param-reassign": ["error", { "props": false }],
+    "arrow-body-style": "off",
+    "arrow-parens": "off",
+    "consistent-return": "off",
+    "no-shadow": "off",
+    "dot-notation": "off",
+    "object-shorthand": "off",
+    "no-unused-vars": "warn",
+    "global-require": "off"
+  },
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "globals": {
+    "info": true,
+    "rootRequire": true,
+    "logger": true,
+    "env": true,
+    "assert": true,
+    "ERROR": true,
+    "helpers": true
+  }
+}

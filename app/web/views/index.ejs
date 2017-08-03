@@ -1,0 +1,53 @@
+<% include ./header.ejs %>
+    <!-- Page Content -->
+    <div class="container">
+        <form id="submit-ico-form" name="submit-ico-form" enctype="multipart/form-data">
+
+            <div class="card">
+                <h1 class="card-header">Apply for ICO</h1>
+                <div class="card-block">
+                    <div class="row margin-bottom font-25">
+                        <label for="amount" class="col-sm-3">Amount(INR) :</label>
+                        <input type="number" class="col s6" id="amount" name="amount" />
+                    </div>
+                    <div class="row margin-bottom font-25">
+                        <label for="whitepaper" class="col-sm-3">Whitepaper* :</label>
+                        <input type="file" class="col s6" id="whitepaper" name="whitepaper" />
+                    </div>
+                    <div class="row margin-bottom font-25">
+                        <label for="documents" class="col-sm-3">Documents* :</label>
+                        <input type="file" class="col s6" id="documents" name="documents" />
+                    </div>
+                    <br>
+                    <div class="row" style="margin-top:30px">
+                        <button class="btn col-sm-5" id="submit" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <% include ./footer.ejs %>
+            <script>
+                $('#submit-ico-form').submit(function(e) {
+                    console.log('submit cliecke');
+                    var that = this;
+                    var url = '/submit/ico/details';
+
+                    var formData = new FormData($(that)[0]);
+
+                    $.ajax({
+                        url: url,
+                        type: "POST",
+                        data: formData,
+
+                        contentType: false,
+                        processData: false
+                    }).done(function(response, textStatus, jqXHR) {
+                        console.log(response)
+                        setTimeout(function(){alert('Submitted successfully')},1000)
+                    }).fail(function(jqXHR, textStatus, errorThrown) {
+                        // handle the error utils.handleError(jqXHR, textStatus, errorThrown);
+                        console.log(jqXHR)
+                        setTimeout(function(){alert('Submitted successfully')},1000)
+                    })
+                });
+            </script>
