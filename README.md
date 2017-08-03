@@ -1,5 +1,5 @@
 # MULTI Coin ICO DAPP
-Prototype of crowdfunding ICO Enterprise Platform built under EYHackathon.
+Prototype of crowdfunding ICO Enterprise Platform built under EYHackathon 2017.
 
 ### Technologies used:
 * Microsoft Azure Ethereum Blockchain as a Service,
